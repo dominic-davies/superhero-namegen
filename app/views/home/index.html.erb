@@ -4,7 +4,12 @@
       <%= link_to 'Click Here To Generate A New Superhero', root_path %> 
     </h5>
     <div class="card-body">
-      <%= @hero_name %>
+    <h3>Your Superhero Name: </h3>
+    <p><%= @hero_name %></p>
+    <h3>Your Superhero Power: </h3>
+    <p><%= @hero_power %></p>
+      
+      
     </div>
     <div class="card-footer text-muted">
       <%= link_to 'Create A Whole Superhero Team', home_team_path, class: "nav-link" %>
