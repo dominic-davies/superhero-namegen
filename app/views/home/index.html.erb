@@ -1,18 +1,17 @@
 <div class="container pt-5">
-  <div class="card">
-    <h5 class="card-header">
-      <%= link_to 'Click Here To Generate A New Superhero', root_path %> 
-    </h5>
-    <div class="card-body">
-      <h3>Your Superhero Name: </h3>
-      <p><%= @hero_name %></p>
-      <h3>Your Superhero Power: </h3>
-      <p><%= @hero_power %></p>
-        
-      <img src="<%= @avatar %>">
-    </div>
-    <div class="card-footer text-muted">
-      <%= link_to 'Create A Whole Superhero Team', home_team_path, class: "nav-link" %>
+  <div class="row">
+    <div class="card text-center" style="width: 20rem;">
+      <img src="<%= @avatar %>" class="card-img-top" alt="Superhero image from robohash.org">
+      <div class="card-body">
+          <h4>Your Superhero Name: </h4>
+          <p class="card-text"><%= @hero_name %></p>
+          <h4>Your Superhero Power: </h4>
+          <p class="card-text"><%= @hero_power %></p>
+      </div>
+      <div class="card-footer text-muted">
+        <%= link_to 'Generate A New Superhero', root_path, class: "btn btn-success" %> 
+        <% link_to 'Create A Whole Superhero Team', home_team_path, class: "nav-link" %>
+      </div>
     </div>
   </div>
 </div>
