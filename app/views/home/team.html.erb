@@ -1,9 +1,21 @@
-<div class="card">
+<div class="card mt-5">
   <h5 class="card-header">
-    <%= link_to 'Click Here To Generate A New Superhero', root_path, class: "card-link" %> 
+    How Many Team Members Do You Want?
   </h5>
   <div class="card-body">
-   <p>How Many Team Members Do You Want?</p>
+    <div class="row">
+<div class="col-md-4">   
+  <%= form_tag home_team_path, :method => "POST" do  %>
+    <%# form.text_field :email %>
+    <%= submit_tag('Build Your Team!') %>
+  <% end %>   
+</div>
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+</div>
+
+    </div>
   </div>
   <div class="card-footer text-muted">
     <%= link_to 'Create A Whole Superhero Team', home_team_path, class: "card-link" %>
