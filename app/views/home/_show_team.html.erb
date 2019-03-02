@@ -2,7 +2,7 @@
     <% @team_number.times do %>
         <div class="col-md-4">
             <div class="card text-center mb-3" style="width: 20rem;">
-             <% rand_num = rand(1..1000) %>
+                
                 <% set_number = rand(1..2) %>
                 <% bg = rand(1..2) %>
 
@@ -18,8 +18,8 @@
                     <% background = "bg2" %>
                 <% end %>
 
-                <% avatar = Faker::Avatar.image(rand_num, "300x300", "png", set, background) #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1" %>
-            <img class="card-img-top" alt="Superhero image from robohash.org" src="<%= avatar %>">
+                <% avatar = Faker::Avatar.image(rand(1..1000), "300x300", "png", set, background) %>
+                <img class="card-img-top" alt="Superhero image from robohash.org" src="<%= avatar %>">
                 <div class="card-body">
                     <h4>Your Superhero Name: </h4>
                     <p class="card-text"><%= Faker::Superhero.name %></p>
