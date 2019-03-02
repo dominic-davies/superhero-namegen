@@ -1,39 +1,19 @@
 <div class="card mt-5">
   <h5 class="card-header">
-    How Many Team Members Do You Want?
+    <% if @team_number > 0 %>
+      Your Superhero Team...
+    <% else %>
+      How Many Team Members Do You Want?
+    <% end %>
   </h5>
   <div class="card-body">
-    <div class="row">
-<div class="col-md-4">
-  <form>   
-  <div class="form-group">
-  <%= form_tag home_team_path, :method => "POST" do  %>
-
-    <%= select_tag(:team_number, options_for_select([
-      ['1', 1],
-      ['2', 2],
-      ['3', 3],
-      ['4', 4],
-      ['5', 5],
-      ['6', 6],
-      ['7', 7],
-      ['8', 8],
-      ['9', 9],
-      ['10', 10],
-      ]), class: 'form-control') %>
+    <% if @team_number > 0 %>
+       <%= render 'home/show_team' %>
+    <% else %>
+      <%= render 'home/create_team' %>
+    <% end %>
   </div>
-
-    <%= submit_tag 'Build Your Team!', class: 'btn btn-info' %>
-  <% end %>   
-  </form>
 </div>
-<div class="col-md-4">
-</div>
-<div class="col-md-4">
-</div>
-
-    </div>
-  </div>
   <div class="card-footer text-muted">
     <%= link_to 'Create A Whole Superhero Team', home_team_path, class: "card-link" %>
   </div>

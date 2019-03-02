@@ -1,0 +1,15 @@
+<div class="row my-5">
+    <% @team_number.times do %>
+        <div class="col-md-4">
+            <div class="card text-center mb-3" style="width: 20rem;">
+            <img src="<%= @avatar %>" class="card-img-top" alt="Superhero image from robohash.org">
+                <div class="card-body">
+                    <h4>Your Superhero Name: </h4>
+                    <p class="card-text"><%= @hero_name %></p>
+                    <h4>Your Superhero Power: </h4>
+                    <p class="card-text"><%= @hero_power %></p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
