@@ -2,12 +2,29 @@
     <% @team_number.times do %>
         <div class="col-md-4">
             <div class="card text-center mb-3" style="width: 20rem;">
-            <img src="<%= @avatar %>" class="card-img-top" alt="Superhero image from robohash.org">
+             <% rand_num = rand(1..1000) %>
+                <% set_number = rand(1..2) %>
+                <% bg = rand(1..2) %>
+
+                <% if set_number == 1 %>
+                    <% set = "set1" %>
+                <% else set_number == 2 %>
+                    <% set = "set2" %>
+                <% end %>
+
+                <% if bg == 1 %>
+                    <% background = "bg1" %>
+                <% else %>
+                    <% background = "bg2" %>
+                <% end %>
+
+                <% avatar = Faker::Avatar.image(rand_num, "300x300", "png", set, background) #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1" %>
+            <img class="card-img-top" alt="Superhero image from robohash.org" src="<%= avatar %>">
                 <div class="card-body">
                     <h4>Your Superhero Name: </h4>
-                    <p class="card-text"><%= @hero_name %></p>
+                    <p class="card-text"><%= Faker::Superhero.name %></p>
                     <h4>Your Superhero Power: </h4>
-                    <p class="card-text"><%= @hero_power %></p>
+                    <p class="card-text"><%= Faker::Superhero.power %></p>
                 </div>
             </div>
         </div>
